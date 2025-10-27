@@ -1,7 +1,7 @@
 package com.ak.constructor_para;
 
 import java.util.Scanner;
-
+//hello
 public class CheckLoanDeatils {
 
 	public static void main(String[] args) {
