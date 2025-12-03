@@ -9,7 +9,6 @@ public class Tester {
 	{
 		
 		m1(10d);
-//		asdf
 	}
 
 }
