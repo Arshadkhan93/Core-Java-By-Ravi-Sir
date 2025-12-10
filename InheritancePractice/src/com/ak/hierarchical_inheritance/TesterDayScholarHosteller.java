@@ -63,8 +63,8 @@ double totalAmount=0;
             default ->{
             }
         }
-           // sc.close();
-
+            sc.close();
+        
     } 
 }
 class Students{

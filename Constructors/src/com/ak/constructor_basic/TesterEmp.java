@@ -12,8 +12,9 @@ public class TesterEmp {
 		String lastName= sc.nextLine();
 		System.out.println("Enter Employee Id :");
 		int employeeId=Integer.parseInt(sc.nextLine());
-		Employee raj = new Employee(null, null, 0, 0, 0);
-		
+		Employee raj= new Employee(firstName, lastName, employeeId, employeeId, employeeId);
+		System.out.println(raj);
+		sc.close();
 	}
 
 }
