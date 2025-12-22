@@ -1,4 +1,4 @@
-package com.ak.exception_basics;
+package com.ak.object_override;
 
 public class ArrayIndexExceptionDemo 
 {
