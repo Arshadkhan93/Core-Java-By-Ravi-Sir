@@ -24,6 +24,7 @@ public class PossibleWaysToRetrieveCollectionObject
 		IO.println("\n3) By using for-each loop:");
 		for(String city:listOfCity)
 		{
+//			
 			IO.println(city);
 		}
 		
