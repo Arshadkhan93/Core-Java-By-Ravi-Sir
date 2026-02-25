@@ -10,11 +10,12 @@ public class Hospital {
 	private String contactNumber;
 	private String location;
 	
-	
+	private static int codeGenerator=100;
 
 	public Hospital(String hospitalName, List<String> listOftreatments, String contactPerson, String contactNumber,
 			String location) {
 		super();
+		this.hospitalCode=codeGenerator++;
 		this.hospitalName = hospitalName;
 		this.listOftreatments = listOftreatments;
 		this.contactPerson = contactPerson;
