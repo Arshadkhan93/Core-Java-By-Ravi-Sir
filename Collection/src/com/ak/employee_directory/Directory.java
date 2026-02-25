@@ -4,35 +4,54 @@ import module java.base;
 public class Directory 
 {
 
-	ArrayList<Employee> listOfEmp = new ArrayList<>();
+	ArrayList<Employee> listOfEmp ;
 	
-	public void addEmployee()
+	public Directory() 
 	{
-		String name = IO.readln("Enter Emp name:");
-		String position = IO.readln("Enter Position Of Emp ");
-		double salary = Double.parseDouble(IO.readln("Enter Salary Of Emp"));
-		listOfEmp.add(new Employee(name, position, salary));		
+		listOfEmp = new ArrayList<>();
+	}
+	
+	public void addEmployee(Employee emp)
+	{
+		listOfEmp.add(emp);
+		 System.out.println(emp.getName() + " added to directory.");
 	}
 	
 	public void displayAllEmployees()
 	{
-		Iterator<Employee> itr = listOfEmp.iterator();
-		while(itr.hasNext())
+		if(listOfEmp.isEmpty())
 		{
-			IO.println(itr.next());
+			IO.println("The List Is Empty!!");
+			return;
+		}
+		IO.println("Emplpoyee Details:");
+		for(int i=0;i<listOfEmp.size();i++)
+		{
+			IO.println((i+1)+" . "+listOfEmp.get(i));
 		}
 	}
 	
-	public void updateEmployee(int index)
+	public void updateEmployee(int index,String newPosition,double newSalary)
 	{
-		Employee employee = listOfEmp.get(index);
-		String position = IO.readln("Enter new Position");
-		employee.setPosition(position);
+		if(index<0 || index>listOfEmp.size())
+		{
+			IO.println("Invalid index. Cannot update employee.");
+			return;
+		}
+		Employee emp = listOfEmp.get(index);
+		emp.setPosition(newPosition);
+		emp.setSalary(newSalary);
+		IO.println(emp.getName()+"'s updated.");
 	}
 	
 	public void deleteEmployee(int index)
 	{
-		Employee employee = listOfEmp.get(index);
-		listOfEmp.remove(employee);
+		if(index <0 || index>listOfEmp.size())
+		{
+			IO.println("Invalid Index. Connot delete employee");
+			return;
+		}
+		Employee removed = listOfEmp.remove(index);
+		IO.println(removed.getName()+" Removed from directory.");
 	}
 }
